@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEasy - Ecommerce Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="logo" href="#">ShopEasy</a>
+
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Search products">
+      </div>
+
+      <button class="login-button" id="loginButton" type="button">Login</button>
+
+      <button class="cart-button" id="cartButton" type="button">
+        Cart <span id="cartCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="tagline">Fresh deals every day</p>
+        <h1>Simple shopping for everyday essentials</h1>
+        <a class="hero-link" href="#products">Shop Now</a>
+      </div>
+      <div class="hero-panel">
+        <p>Weekend Sale</p>
+        <strong>Up to 40% off</strong>
+        <span>Selected products only</span>
+      </div>
+    </section>
+
+    <section class="categories" aria-label="Product categories">
+      <button class="category-btn active" data-category="all" type="button">All</button>
+      <button class="category-btn" data-category="electronics" type="button">Electronics</button>
+      <button class="category-btn" data-category="fashion" type="button">Fashion</button>
+      <button class="category-btn" data-category="home" type="button">Home</button>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <h2>Featured Products</h2>
+        <p id="productCount"></p>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>ShopEasy</h2>
+        <p>Your simple store for daily fashion, home, and electronics deals.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <h3>Support</h3>
+        <a href="#">Help Center</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@shopeasy.com</p>
+        <p>Phone: +91 98765 43210</p>
+        <div class="social-links">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 ShopEasy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="closeCart" type="button" aria-label="Close cart">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button class="checkout-btn" id="checkoutButton" type="button">Checkout</button>
+    </div>
+  </aside>
+
+  <section class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Login</h2>
+        <button class="close-modal" id="closeLogin" type="button" aria-label="Close login">&times;</button>
+      </div>
+
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Enter password" required>
+
+        <button class="form-button" type="submit">Login</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Checkout</h2>
+        <button class="close-modal" id="closeCheckout" type="button" aria-label="Close checkout">&times;</button>
+      </div>
+
+      <form id="checkoutForm">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" type="text" placeholder="Enter your name" required>
+
+        <label for="address">Delivery Address</label>
+        <textarea id="address" rows="3" placeholder="Enter delivery address" required></textarea>
+
+        <label for="payment">Payment Method</label>
+        <select id="payment" required>
+          <option value="">Select payment method</option>
+          <option value="Cash on Delivery">Cash on Delivery</option>
+          <option value="Card">Card</option>
+          <option value="UPI">UPI</option>
+        </select>
+
+        <button class="form-button" type="submit">Place Order</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="overlay" id="overlay"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
